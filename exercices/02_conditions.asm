@@ -27,7 +27,7 @@ msg_neq: .asciz "Ces nombres ne sont pas egaux"
 ### Ici à vous de jouer utiliser
 # deux instructions à écrire pour charger 5 dans t0 et t1 dans 4.
 li t0, 5
-li t1, 4
+li t1, 5
 
 bne t0, t1, not_eq # if t0 != t1 jump not_eq
 
@@ -38,7 +38,7 @@ j end # On a fini donc on peut sortir du if.
 # Cas Inégaux
 not_eq:
 la a0 msg_neq # msg <- "Ces nombres ne sont pas egaux"
-###
+j end # On a fini donc on peut sortir du if.
 
 end:
 # Affichage
@@ -48,5 +48,4 @@ end:
 # le numéro du syscall printString: 4 et a7 la chaine à afficher.
 
 li a7, 4
-la a0, msg_eq
 ecall
